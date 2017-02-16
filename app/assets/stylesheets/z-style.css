@@ -1,0 +1,56 @@
+.navbar-brand span {
+  z-index: 999;
+  position: absolute;
+  padding: 1px 0 0 33px;
+  letter-spacing: 7px;
+  text-shadow:  2px 2px 1px #333333;
+  filter:dropshadow(color= 2px 2px 1px #333333);
+}
+.navbar-brand span i {
+  text-transform: none;
+  font-style: normal;
+  color: white;
+}
+.navbar-brand img {
+  position: absolute;
+  top:2px;
+}
+@media (max-width:992px) {
+  .navbar-brand span {
+    display: none;
+  }
+}
+@media(max-width:767px) {
+  .navbar-brand img {
+    height: 46px;
+    width: 54px;
+  }
+  .navbar-brand span {
+    display: block;
+    top:7px;
+    font-size: 24px;
+    padding-left: 27px;
+  }
+
+}
+
+/* -- Slide -- */
+.home-slide-content {
+  text-transform: uppercase;
+
+}/* // Slide -- */
+
+.fa-envelope {
+  font-size: 28px !important;
+}
+.fa-mobile {
+  font-size: 48px !important;
+}
+.contact-table td, .contact-table tr {
+  border: none;
+}
+.contact-table tr td:last-child {
+  padding: 0 0 0 10px;
+  text-align: left;
+}
+

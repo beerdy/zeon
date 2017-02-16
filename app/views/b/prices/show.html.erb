@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @price.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @price.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @price.slave %>
+</p>
+
+<p>
+  <strong>Image uid:</strong>
+  <%= @price.image_uid %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @price.image_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @price.url %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @price.sort %>
+</p>
+
+<%= link_to 'Edit', edit_price_path(@price) %> |
+<%= link_to 'Back', prices_path %>

@@ -1,0 +1,351 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+            <a href="/" class="navbar-brand"><span><i>E</i>ONMEDIA</span><%= image_tag @content[3].image.url if @content[3].image_stored? %></a>
+          </div>
+    <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+    <ul id="menu-menu-1" class="nav navbar-nav pull-right">
+      <li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-16 active"><a title="Home" href="#home-slider">Главная</a></li>
+      <li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-18 active"><a title="Artists" href="#artists">Клиенты</a></li>
+      <li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-17 active"><a title="Home" href="#services">Услуги</a></li>
+      <li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-19 active"><a title="Events" href="#portfolio">Работы</a></li>
+      <li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-20 active"><a title="Pricing" href="#pricing">Прайс</a></li>
+      <li id="menu-item-21" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-21 active"><a title="Contact" href="#contact-page">Контакты</a></li>
+      <!-- <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a title="Blog" href="http://www.clubthemes.com/demo-yola/blog/">Blog</a></li> -->
+    </ul></div>   <!--/.nav-collapse -->
+  </div>
+</div><section id="home-slider" class="flexslider fullbg" style="background-image:url(<%=@content[5].image.url%>);">
+<ul class="slides">
+  
+  <%Slide.all.each do |slide|%>
+  <% words = slide.description.split ';' %>
+  <li class="home-slide">
+  <div class="flex-caption transparent light-font center">
+    <p class="firstw home-slide-content <%=@slide_styles.resume%>" data-wow-delay="2s" data-wow-duration="4s">
+      <%=words[0]%><span class="first-word"><%=words[1]%></span></p>
+    <p class="home-slide-content <%=@slide_styles.resume%>" data-wow-delay="2s" data-wow-duration="4s">
+      <%=words[2]%></p>
+  </div>
+  </li>
+  <%end%>
+  <!--
+  <li class="home-slide">
+  <div class="flex-caption transparent light-font center">
+    <p class="firstw home-slide-content flipInY">
+     цены <span class="first-word">всегда</span></p>
+    <p class="home-slide-content slideInLeft">
+      ниже   </p>
+  </div>
+  </li>
+  -->
+
+</ul>
+</section>
+<section id="about" class="whitetext" style="background-image:url(<%=@content[4].image.url%>);">
+  <div class="starter-template">
+    <div class="container">
+      <div class="text-center wow zoomIn">
+        <h2><%=@about_head%></h2>
+        <div class="smallsep">
+        </div>
+        <p class="subt lead">
+          <%=@about_title%>
+        </p>
+      </div>
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <%=@content[3].description%>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</section>
+
+<section id="artists" class="whitetext" style="background-image:url(<%=@content[4].image.url%>);">
+
+<div class="container">
+  <div class="starter-template">
+    <h2><%=@clients_head%></h2>
+    <div class="smallsep">
+    </div>
+    <p class="subt lead"><%=@clients_title%></p>
+    <div class="row wow bounceIn">
+      <%Client.all.each do |client|%>
+      <div class="col-md-4 wow fadeIn">
+        <div class="thumbnail">
+          <%= image_tag client.image.url if client.image_stored? %>
+          <div class="caption"><h4><%=client.title%></h4></div>
+        </div>
+      </div>
+      <%end%>
+<!--
+      <div class="col-md-4 wow fadeIn">
+        <div class="thumbnail">
+          <img src="http://www.clubthemes.com/demo-yola/wp-content/uploads/sites/2/2016/11/artist3.jpg">
+          <div class="caption"><h4>David Alvarado</h4></div>
+        </div>
+-->
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+<section id="services" class="whitetext"  style="background-image:url(<%=@content[4].image.url%>);">
+
+<div class="container">
+  <div class="starter-template">
+    <h2><%=@service_head%></h2>
+    <div class="smallsep">
+    </div>
+    <p class="subt lead"><a href="#contact-page"><%=@service_title%></a></p>
+    <div class="col-md-12 wow fadeInRight">
+          
+<!--    
+    <div class="boxservice">
+      <a href="#">
+        <i class="fa fa-check"></i>
+      </a>      
+      <h3>Open Bar</h3>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy diam nonumy eirmod tempor invidunt.</p>
+    </div> -->
+    <%Service.all.each do |srv| %>
+    <div class="boxservice">
+              <a href="#">
+          <i class="fa fa-check"></i>
+        </a>
+          
+      <h3><%=srv.title%></h3>
+      <p><%=srv.description%></p>   </div>
+    <%end%>
+
+            
+
+
+            </div>
+
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+</section>
+<section id="portfolio" class="whitetext"  style="background-image:url(<%=@content[4].image.url%>);">
+  <div class="container">
+    <div class="starter-template">
+      <h2><%=@works_head%></h2>
+      <div class="smallsep">
+      </div>
+      <p class="subt lead"><%=@works_title%></p>
+
+    <div class="wow zoomIn animated" data-wow-delay="0.1s" data-wow-duration="1s">
+      <% @works.each do |work|%>
+      <!-- this is where you should insert your content of the posts -->
+      <div class="col-md-6 portfolio-item">
+        <a href="#<%=work.id%>" class="portfolio-link" data-toggle="modal">
+        <div class="caption">
+          <div class="caption-content">
+            <i class="fa fa-link fa-2x"></i>
+          </div>
+        </div>
+        <img width="810" height="450" src="<%= work.image.url if work.image_stored?%>" sizes="(max-width: 810px) 100vw, 810px" />       </a>
+      </div>
+      <%end%>
+
+      <!-- this is where you should insert your content of the posts -->
+      <!--
+      <div class="col-md-6 portfolio-item">
+        <a href="#10" class="portfolio-link" data-toggle="modal">
+        <div class="caption">
+          <div class="caption-content">
+            <i class="fa fa-link fa-2x"></i>
+          </div>
+        </div>
+        <img width="810" height="450" src="http://www.clubthemes.com/demo-yola/wp-content/uploads/sites/2/2016/11/event2.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="event2" srcset="http://www.clubthemes.com/demo-yola/wp-content/uploads/sites/2/2016/11/event2.png 810w, http://www.clubthemes.com/demo-yola/wp-content/uploads/sites/2/2016/11/event2-300x167.png 300w, http://www.clubthemes.com/demo-yola/wp-content/uploads/sites/2/2016/11/event2-768x427.png 768w" sizes="(max-width: 810px) 100vw, 810px" />       </a>
+      </div>
+      -->
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<% @works.each do |work|%>
+<div class="portfolio-modal modal fade" id="<%=work.id%>" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body">
+            <h2 class="entry-title"><%= work.title %></h2>            
+            <hr class="star-primary">
+            <img width="810" height="450" src="<%= work.image.url if work.image_stored?%>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="event4" srcset="<%= work.image.url if work.image_stored?%>" />
+            <%=work.description.html_safe%>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%end%>
+<!--
+<div class="portfolio-modal modal fade" id="12" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body">
+            <h2 class="entry-title">Mark&#8217;s Stand Up</h2>            <hr class="star-primary">
+            <img width="810" height="450" src="http://www.clubthemes.com/demo-yola/wp-content/uploads/sites/2/2016/11/event3.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="event3" srcset="http://www.clubthemes.com/demo-yola/wp-content/uploads/sites/2/2016/11/event3.png 810w, http://www.clubthemes.com/demo-yola/wp-content/uploads/sites/2/2016/11/event3-300x167.png 300w, http://www.clubthemes.com/demo-yola/wp-content/uploads/sites/2/2016/11/event3-768x427.png 768w" sizes="(max-width: 810px) 100vw, 810px" />           <p>Lorem ipsum dolor sit amet, consectetur Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor. Nulla varius consequat magna, id molestie ipsum volutpat quis. Suspendisse consectetur fringilla suctus. Pellentesque ipsum erat, facilisis ut venenatis eu, sodales vel dolor quis lacinia faucibus, orci ipsum gravida tortor. Suspendisse consectetur fringilla suctus.</p>
+            <p><strong>Event</strong>: Dorino Event</p>
+            <p><strong>Singer</strong>: Bryan Adams</p>
+            <p><strong>Location</strong>: Trafalgar Square</p>
+            <p><strong>Date</strong>: 11/12/2019</p>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<!-- PRICING
+================================================== -->
+<section id="pricing" class="whitetext" style="background-image:url(<%=@content[4].image.url%>);">
+<div class="container">
+  <div class="starter-template">
+      <h2><%=@price_head%></h2>
+      <div class="smallsep">
+      </div>
+      <p class="subt lead"><%=@price_title%></p>
+
+  <div class="row pricing wow fadeInLeft">
+      
+    <% Price.all.each do |price| %>
+    <div class="col-md-4">
+      <div class="whitebox <%=@colors.resume%>">
+        <div class="content">
+          <p class="price"><%=price.title%><sup>₽</sup></p>
+            <%=price.description.html_safe%>
+          <a class="btn btn-lg" href="#contact-page"><i class="fa fa-"></i> Задать вопрос</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+
+
+  </div>
+  </div>
+  </div>
+</section>
+
+  <section id="contact-page" class="whitetext" style="background-image:url(<%=@content[4].image.url%>);">
+    <div class="container">
+      <div class="starter-template text-center wow zoomIn">
+          <h2><%=@contact_us%></h2>
+          <div class="smallsep"></div>
+          <table class="subt lead contact-table">
+            <tr>
+              <td><i class="fa fa-mobile" aria-hidden="true"></i></td>
+              <td><%=@phone%></td>
+            </tr>
+            <tr>
+              <td><i class="fa fa-envelope" aria-hidden="true"></i></td>
+              <td><%=@email%></td>
+            </tr>
+          </table>
+
+        <div id="kento-contact-form" class="max80">
+    
+    <%= form_for @message, remote: false, :html => { :id => "contact" } do |f| %>
+      <% if @message.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+          <ul>
+          <% @message.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="row">
+        <!-- The Name form field -->
+        <div class="col-md-6">
+          <label for="name" id="name_label">Как к Вам обращаться<span class="required">*</span></label>
+          <input type="text" name="message[name]" id="kento-contact-form-name" size="30" value="" required/>
+          <span class="kento-contact-form-name-valid"></span>
+        </div>
+        <!-- The Email form field -->
+        <div class="col-md-6">
+          <label for="email" id="email_label">Ваш контакт для связи<span class="required">*</span></label>
+          <input type="text" name=message[contact] size="30" value="" required/>
+        </div>
+      </div>
+      <!-- The mgs form field -->
+      <div style="margin-top:15px;">
+        <label for="message" id="mgs_label">Введите текст обращения<span class="required">*</span></label>
+        <textarea name=message[message] id="kento-contact-form-mgs" required></textarea>
+        <span class="kento-contact-form-mgs-valid"></span>
+      </div>
+      <!-- The Submit button -->
+      <button id="kento-contact-form-submit" name="submit" style="margin-top:15px;">
+      Отправить</button>
+
+    <% end %>
+
+
+    <!-- We will output the results from process.php here -->
+    <div id="kento-contact-form-submit-success">
+    </div>
+  </div>
+      </div>
+    </div>
+<div class="row">
+<div class="col-md-12 col-sm-12 text-center">
+<h2><%=@map_head%></h2>
+<div class="smallsep">
+</div>
+<p class="subt lead"><%=@map_title%></p>
+
+<div class="map">
+  <%=@content[2].slave.html_safe%>
+</div>
+</div>
+</div>
+  </section>
+<section id="footer" class="footer" style="margin:0">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <ul class="social-icons">
+              
+      </ul>
+      <%= @content[0].description.html_safe %>
+          </div>
+  </div>
+</div>
+</section>
+

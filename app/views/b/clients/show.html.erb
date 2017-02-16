@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @client.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @client.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @client.slave %>
+</p>
+
+<p>
+  <strong>Image uid:</strong>
+  <%= @client.image_uid %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @client.image_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @client.url %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @client.sort %>
+</p>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>

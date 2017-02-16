@@ -1,0 +1,16 @@
+prime.lada.ru	FALSE	/	FALSE	PHPSESSID	ge7vu9old00pjluvfa9q6bv753
+.lada.ru	TRUE	/	FALSE	1495014903	compare_6295171	
+.lada.ru	TRUE	/	FALSE	1518701239	cookie_city	938165
+.lada.ru	TRUE	/	FALSE	1518768687	dealerCode	565498845
+.lada.ru	TRUE	/	FALSE	1565862935	popup_campaign_fishka	nothing
+www.lada.ru	FALSE	/	FALSE	resolution	1920
+prime.lada.ru	FALSE	/	FALSE	resolution	1920
+.lada.ru	TRUE	/	FALSE	1518701239	siteDomain	prime
+prime.lada.ru	FALSE	/	FALSE	swc_clientname	%D0%93%D0%BE%D1%81%D1%82%D1%8C
+prime.lada.ru	FALSE	/	FALSE	swc_isconnection	false
+prime.lada.ru	FALSE	/	FALSE	1487770043	swc_swfirstloadtime	Wed%20Feb%2015%202017%2016%3A27%3A23%20GMT%2B0300
+prime.lada.ru	FALSE	/	FALSE	1487290292	swc_swnonewvisit	1
+prime.lada.ru	FALSE	/	FALSE	swc_swreferrer	http%3A%2F%2Fprime.lada.ru%2Fds%2Fnews_dealer.php
+prime.lada.ru	FALSE	/	FALSE	1487304692	swc_swsessionid	673768510
+prime.lada.ru	FALSE	/	FALSE	1487319093	swc_swtimeall	1439
+prime.lada.ru	FALSE	/	FALSE	1487319093	swc_swtimepage	1
