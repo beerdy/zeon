@@ -38,8 +38,9 @@ RailsAdmin.config do |config|
     history_index
     history_show
 
-    member :my_member_action do             # subclass Base. Accessible at /admin/<model_name>/<id>/my_member_action
-      i18n_key :print                        # will have the same menu/title labels as the Edit action.
+    config.authenticate_with do
+      warden.authenticate! scope: :user
     end
+    config.current_user_method(&:current_user)
   end
 end
